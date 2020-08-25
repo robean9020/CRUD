@@ -1,0 +1,56 @@
+<form class="form contact"
+      action="<?php echo $block->getUrl('crud/index/save'); ?>"
+      id="contact-form"
+      method="post"
+      enctype="multipart/form-data"
+      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}'>
+
+    <fieldset class="fieldset">
+        <div class="field name required">
+            <label class="label" for="fullname"><span><?= $block->escapeHtml(__('Name')) ?></span></label>
+            <div class="control">
+                <input name="name" id="name" title="<?= $block->escapeHtmlAttr(__('name')) ?>"  class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="url_key"><span><?= $block->escapeHtml(__('Url_key')) ?></span></label>
+            <div class="control">
+                <input name="url_key" id="url_key" title="<?= $block->escapeHtmlAttr(__('url_key')) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="content"><span><?= $block->escapeHtml(__('Content')) ?></span></label>
+            <div class="control">
+                <input name="post_content" id="post_content" title="<?= $block->escapeHtmlAttr(__('post_content')) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="tags"><span><?= $block->escapeHtml(__('Tags')) ?></span></label>
+            <div class="control">
+                <input name="tags" id="tags" title="<?= $block->escapeHtmlAttr(__('tags')) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="status"><span><?= $block->escapeHtml(__('Status')) ?></span></label>
+            <div class="control">
+                <input name="status" id="status" title="<?= $block->escapeHtmlAttr(__('status')) ?>" class="input-text" type="number" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="image"><span><?= $block->escapeHtml(__('Image')) ?></span></label>
+            <div class="control">
+                <input name="featured_image" id="featured_image" title="<?= $block->escapeHtmlAttr(__('featured_image')) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Save')) ?>" class="action submit primary">
+                <span><?= $block->escapeHtml(__('Save')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+<script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
+<script>CKEDITOR.replace( 'content' );</script>

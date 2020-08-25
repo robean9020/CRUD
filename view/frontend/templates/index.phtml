@@ -1,0 +1,24 @@
+<table>
+     <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Url Key </th>
+          <th>Content </th>
+          <th colspan="3">Action</th>
+     </tr>
+ 
+     <?php
+          $collection = $block->getResult();
+          foreach($collection as $item){
+     ?>
+     <tr>
+          <td><?php echo $item->getData('post_id'); ?></td>
+          <td><?php echo $item->getData('name'); ?></td>
+          <td><?php echo $item->getdata('url_key') ?></td>
+          <td><?php echo $item->getdata('post_content')?></td>
+          <td><a href="<?php echo $block->getUrl('crud/index/insert')?>" class="action primary">Add Record</a></td>
+          <td><a href="<?php echo $block->getUrl('crud/index/edit').'id/'.$item->getData('post_id'); ?>" class="action primary">Edit</a></td>
+          <td><a href="<?php echo $block->getUrl('crud/index/delete').'?id='.$item->getData('post_id'); ?>" class="action primary">Delete</a></td>
+     </tr>
+     <?php } ?>
+</table>
